@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdProject</title>
+    <link rel="SHORTCUT ICON" href="index/icon.png" type="image/x-icon">
+    <style>
+        ::-webkit-scrollbar-track {
+            background-color:#32312e;
+            box-shadow:0px 0px 3px #000 inset;
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background-color:#575757;
+        }
+        ::-webkit-scrollbar{
+            width: 11px;
+        }
+        @font-face{
+                font-family: WF;
+                src: url(index/WF.ttf);
+        }
+        body{
+            background-image: url(index/BG.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .welc{
+            padding: 1vw;
+            width: calc(97vw - 16px);
+            height: 100vh;
+            position: relative;
+            background-image: url(index/фон.jpg);
+            background-attachment: fixed;
+            background-size:auto;
+            border-radius: 1vh 1vh 0 0;
+            margin-bottom: 2vw;
+        }
+        header{
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            margin-bottom: 1vh;
+        }
+        header img{
+            width: 4.8vw;
+            height: 4.8vw;
+            display: block;
+            position: absolute;
+        }
+        nav{
+            margin-top: -1.2vh;
+            height: 8vh;
+            width: calc(97vw - 14px);
+            border-radius: 0 0 2vh 2vh;
+            padding: 1vw;
+            background-color: rgb(24, 24, 24);
+            text-align: center;
+        }
+        .ch1{
+            text-decoration: none;
+            color: rgb(131, 131, 131);
+            font-size: 2.7vw;
+            padding: 1vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+        }
+        .ch1:hover{
+            color: rgb(180, 180, 180);
+            font-size: 2.9vw;
+        }
+        .welc p{
+            margin: auto;
+            color: white;
+            width: 50%;
+            font-size: 8vw;
+            font-family: WF;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: grayscale(1) contrast(3) blur(1px);
+            margin-top: 3vw;
+        }
+        .a1{
+            width: 95%;
+        }
+        .a1 p{
+            font-size: 6.5vw;
+            width: fit-content;
+            color: rgb(170, 170, 170);
+            height: fit-content;
+            margin-left: 10%;
+        }
+        .a2{
+            width: 95%;
+        }
+        .ls{
+            float: left;
+            background-color: rgba(251, 246, 237, 0.6);
+            width: 80%;
+            font-size: 4vw;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            opacity: 0;
+        }
+        .rs{
+            float:right;
+            background-color: rgba(251, 246, 237, 0.6);
+            width: 80%;
+            font-size: 4vw;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            opacity: 0;
+        }
+        section{
+            margin: auto;
+            text-align: center;
+            width: 70%;
+        }
+        .Slider{
+            margin: auto;
+            text-align: center;
+            width: 70%;
+            width: 45vw;
+            height: 50vh;
+            border: 1vh groove rgb(216, 214, 209);
+            overflow: hidden;
+        }
+        .Slider img{
+            width: 45vw;
+            height: 50vh;
+            padding: 0%;
+            margin: auto;
+        }
+        .Slider div{
+            width: 181vw;
+            animation: movie 20s infinite;
+        }
+        .SP{
+            font-size: 6.5vw;
+            width: fit-content;
+            color: rgb(170, 170, 170);
+            height: fit-content;
+            margin-left: 10%;
+        }
+        @keyframes movie{
+            from {transform: translateX(0vw);}
+            16.6% {transform: translateX(-45vw);}
+            33.2% {transform: translateX(-90vw);}
+            49.8% {transform: translateX(-135vw);}
+            66.4% {transform: translateX(-90vw);}
+            83% {transform: translateX(-45vw);}
+            to {transform: translateX(-0vw);}
+        }
+        .inf{
+            width: 50%;
+            height: 50%;
+        }
+        .inf p{
+            color: rgb(170, 170, 170);
+            font-size: 2.6vw;
+        }
+        footer{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        footer p{
+            color: rgb(170, 169, 169);
+            font-size: 2.6vw;
+        }
+        footer a{
+            text-decoration: none;
+            color: rgb(210, 210, 210);;
+        }
+    </style>
+    <script>
+        function cbg(){
+            document.querySelector(".ch").style.transition="background-color 2s"
+            document.querySelector(".ch1").style.transition="background-color 2s"
+            document.querySelectorAll(".ls")[0].style.transition="opacity 2s"
+            document.querySelectorAll(".rs")[0].style.transition="opacity 2s"
+            document.querySelectorAll(".ls")[1].style.transition="opacity 2s"
+            document.querySelectorAll(".rs")[1].style.transition="opacity 2s"
+            //document.querySelector(".change").style.background="url(586099.JPG)"
+            t=document.querySelector(".count").getBoundingClientRect().top
+            console.log(t)
+            if (t<-1000) {
+                document.querySelector(".ch").style.backgroundColor="rgb(150, 150, 150)"
+                document.querySelectorAll(".ch1")[0].style.color="#292929"
+                document.querySelectorAll(".ch1")[1].style.color="#292929"
+                document.querySelectorAll(".ch1")[2].style.color="#292929"
+            }
+            if (t>-1000) {
+                document.querySelector(".ch").style.backgroundColor="rgb(24, 24, 24)"
+                document.querySelectorAll(".ch1")[0].style.color="rgb(131, 131, 131)"
+                document.querySelectorAll(".ch1")[1].style.color="rgb(131, 131, 131)"
+                document.querySelectorAll(".ch1")[2].style.color="rgb(131, 131, 131)"
+            }
+            if (t<-750) {
+                document.querySelectorAll(".ls")[0].style.opacity="1"
+                document.querySelectorAll(".rs")[0].style.opacity="1"
+            }
+            if (t<-950){
+                document.querySelectorAll(".ls")[1].style.opacity="1"
+                document.querySelectorAll(".rs")[1].style.opacity="1"
+            }
+
+    }
+    </script>
+</head>
+<body class="count" onscroll="cbg()">
+    <header>
+        <nav class="ch"><img src="index/icon.png"><a class="ch1" href="#welc">Главная</a><a class="ch1" href="товары/Goods.html">Наши товары</a><a class="ch1" href="https://vk.com/sleepy_owo">Связь с нами</a></nav>
+    </header>
+    <section class="welc" id="welc">
+        <p>Welcome<br>to<br>Ad Lake</p>
+    </section>
+    <section class="a1">
+        <p>У нас есть:</p>
+        <div class="ls">Молодая и активная команда</div>
+        <div class="rs">Свежий взгляд и опыт в новых отраслях дизайна</div>
+        <p>Мы предлагаем:</p>
+        <div class="ls">Скидки репетиторам, учителям и новым клиентам</div>
+        <div class="rs">Сотрудничество с образовательными организациями и не только</div>
+    </section>
+    <section class="a2">
+        <p class="SP">Наши работы:</p>
+        <div class="Slider">
+            <div>
+                <img src="index/img/g1.png"> <img src="index/img/g2.png"> <img src="index/img/r1.png"> <img src="index/img/r2.png">
+            </div>
+        </div>
+    </section>
+    <section class="inf">
+        <p>Ниже представлены результаты опроса, проведённого нами среди учащихся 10 класса и студентов первого курса</p>
+        <script id="infogram_0_472aaace-563d-4db9-a3ae-811f02b2c4b5" title="Stats" src="https://e.infogram.com/js/dist/embed.js?CM8" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/472aaace-563d-4db9-a3ae-811f02b2c4b5" style="color:#989898!important;text-decoration:none!important;" target="_blank">Stats</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+    </section>
+    <footer>
+        <p>Вы также можете поучавствовать в нашем опросе отсканировав QR-код ниже или <a href="https://forms.gle/sxJJ5FdEtLvidCDZ6">по ссылке</a></p>
+        <img src="index/QR.png">
+    </footer>
+</body>
+</html>

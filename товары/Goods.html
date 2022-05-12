@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AdLake</title>
+        <link rel="SHORTCUT ICON" href="Goods/icon.png" type="image/x-icon">
+        <style>
+        ::-webkit-scrollbar-track {
+            background-color:#32312e;
+            box-shadow:0px 0px 3px #000 inset;
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background-color:#575757;
+        }
+        ::-webkit-scrollbar{
+            width: 11px;
+        }
+        @font-face{
+            font-family: WF;
+            src: url(Goods/WF.ttf);
+        }
+        body{
+            background-attachment: fixed;
+            background-image: url(Goods/BG.jpg);
+            background-size: 100vw;
+        }
+        details{
+            cursor: pointer;
+            width: 20vw;
+            float: left;
+            margin-left: 10vw;
+        }
+        summary{
+            outline: none;
+            text-align: center;
+        }
+            details h1{
+            background-color: rgba(144, 198, 216, 0.6);
+            border-radius: 10px;
+            
+            text-align: center;
+            font-size: large;
+            width: 20vw;
+            margin-top: 5px;
+            position: absolute;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        nav{
+            margin-top: -1.2vh;
+            height: 8vh;
+            width: calc(97vw - 14px);
+            border-radius: 0 0 2vh 2vh;
+            padding: 1vw;
+            background-color: rgb(150, 150, 150);
+            text-align: center;
+        }
+        .welc{
+            padding: 1vw;
+            width: calc(97vw - 16px);
+            height: 100vh;
+            position: relative;
+            background-image: url(index/фон.jpg);
+            background-attachment: fixed;
+            background-size:auto;
+            border-radius: 1vh 1vh 0 0;
+            margin-bottom: 2vw;
+        }
+        .welc p{
+            margin: auto;
+            color: white;
+            width: 50%;
+            font-size: 8vw;
+            font-family: WF;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: grayscale(1) contrast(3) blur(1px);
+            margin-top: 3vw;
+        }
+        a{
+            text-decoration: none;
+            color: #292929;
+            font-size: 2.7vw;
+            padding: 1vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+        }
+        .a1:hover{
+            color: #141414;
+            font-size: 2.9vw;
+        }
+        p{
+            color: rgb(144, 198, 216);
+            cursor: pointer;
+            text-align: center;
+            margin-top: auto;
+            font-family: WF;
+            width: 20vw;
+            font-size: xx-large;
+            margin-top: 20px;
+        }
+        img{
+            height: 15vw;
+            width: 15vw;
+        }
+        </style>
+    </head>
+    <body link="#90c6d8" alink="whitesmoke" vlink="#90c6d8">
+        <header>
+            <nav id="npan"><a class="a1" href="../index.html">Главная</a><a>Наши товары</a><a class="a1" href="https://vk.com/sleepy_owo">Связь с нами</a></nav>
+        </header>
+        <section style="margin-top: 50px;">
+            <details><summary><img src="Goods/g1.png"><p>Оформить товар</p></summary>
+                <h1><a href="mailto:adlake.co@gmail.com?subject=Визитная карта&body=Хотим заказать визитную карту у вас" target="_blank" rel="noopener noreferrer">Заказать</a></h1>
+            </details>
+            <details><summary><img src="Goods/g2.png"><p>Оформить товар</p></summary>
+                <h1><a href="mailto:adlake.co@gmail.com?subject=Баннер&body=Хотим заказать баннер у вас" target="_blank" rel="noopener noreferrer">Заказать</a></h1>
+            </details>
+            <details><summary><img src="Goods/g3.png"><p>Оформить товар</p></summary>
+                <h1><a href="mailto:adlake.co@gmail.com?subject=Флаер&body=Хотим заказать флаер у вас" target="_blank" rel="noopener noreferrer">Заказать</a></h1>
+            </details>
+            <details style="margin-left: 25vw;"><summary><img src="Goods/g4.png"><p>Оформить товар</p></summary>
+                <h1><a href="mailto:adlake.co@gmail.com?subject=Брошюра&body=Хотим заказать брошюру у вас" target="_blank" rel="noopener noreferrer">Заказать</a></h1>
+            </details>
+            <details><summary><img src="Goods/g5.png"><p>Оформить товар</p></summary>
+                <h1><a href="mailto:adlake.co@gmail.com?subject=Стенд&body=Хотим заказать стенд у вас" target="_blank" rel="noopener noreferrer">Заказать</a></h1>
+            </details>
+            <script>
+                function onToggle(event) {
+                  if (event.target.open) {
+                    document.querySelectorAll("details[open]").forEach((el) => {
+                      if (el === event.target) {
+                        return;
+                      }
+                      el.open = false;
+                    });
+                  }
+                }
+                document.querySelectorAll("details").forEach((el) => el.addEventListener("toggle", onToggle));
+            </script>
+        </section>
+    </body>
+</html>
